@@ -1,0 +1,87 @@
+.header {
+  width: 100vw;
+  height: 300px;
+  background-image: url("../assets/images/headerLight.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+  gap: 348px;
+}
+
+.headerTitle h1 {
+  color: rgb(255, 255, 255);
+  font-family: "Josefin Sans";
+  font-size: 40px;
+  font-weight: 700;
+  line-height: -1px;
+  letter-spacing: 5px;
+  text-align: left;
+}
+
+.todoCreated {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.todoCreated .addInp {
+  width: 540px;
+  padding: 23px 52px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  background: rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+
+.addInp::placeholder {
+  color: rgb(148, 149, 165);
+  font-family: 'Josefin Sans';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: -1px;
+  letter-spacing: -0.25px;
+  text-align: left;
+}
+
+.todoBar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+  }
+  
+  .todoBar li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    width: 300px;
+    text-align: left;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .todoBar li img {
+    margin-right: 10px;
+    max-width: 24px;
+  }
