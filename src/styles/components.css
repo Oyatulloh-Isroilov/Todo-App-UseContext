@@ -54,7 +54,7 @@
 
 .addInp::placeholder {
   color: rgb(148, 149, 165);
-  font-family: 'Josefin Sans';
+  font-family: "Josefin Sans";
   font-size: 18px;
   font-weight: 400;
   line-height: -1px;
@@ -63,25 +63,83 @@
 }
 
 .todoBar ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 24px;
-  }
-  
-  .todoBar li {
-    background-color: #f9f9f9;
-    padding: 10px;
-    margin-bottom: 5px;
-    width: 300px;
-    text-align: left;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .todoBar li img {
-    margin-right: 10px;
-    max-width: 24px;
-  }
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  background: #fff;
+}
+
+.todoBar li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 540px;
+  text-align: left;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todoBar li button {
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.todoBar li button:hover {
+  background-color: #ff1a1a;
+}
+
+.todoText {
+  color: rgb(73, 76, 107);
+  font-family: "Josefin Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: -1px;
+  letter-spacing: -0.25px;
+  text-align: left;
+}
+
+.todoBottom {
+  display: flex;
+  gap: 40px;
+  width: 100vw;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  background: rgb(255, 255, 255);
+  background: #fff;
+  padding: 16px 24px;
+}
+
+.todoBottom span {
+  color: rgb(148, 149, 165);
+  font-family: "Josefin Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: -1px;
+  letter-spacing: -0.19px;
+  text-align: left;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.categoriesText {
+  cursor: pointer;
+}
+
+.categoriesText:hover {
+  color: rgb(58, 124, 253);
+}

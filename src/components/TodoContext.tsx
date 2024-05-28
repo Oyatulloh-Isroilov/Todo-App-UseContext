@@ -1,31 +1,34 @@
-import React, { createContext, useState, ReactNode } from 'react';
+import React, { createContext, useState, useEffect, ReactNode } from "react";
 
-// Todo turi
-interface TodoContextType {
-    todos: string[];
-    addTodo: (todo: string) => void;
+export interface TodoContextType {
+  todos: string[];
+  addTodo: (todo: string) => void;
+  removeTodo: (index: number) => void;
 }
 
-// Context yaratish
-const TodoContext = createContext<TodoContextType | undefined>(undefined);
+export const TodoContext = createContext<TodoContextType | undefined>(undefined);
 
-interface TodoProviderProps {
-    children: ReactNode;
-}
+export const TodoProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [todos, setTodos] = useState<string[]>(() => {
+    const savedTodos = localStorage.getItem('todos');
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
 
-// Provider komponentini yaratish
-const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
-    const [todos, setTodos] = useState<string[]>([]);
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
-    const addTodo = (todo: string) => {
-        setTodos([...todos, todo]);
-    };
+  const addTodo = (todo: string) => {
+    setTodos((prevTodos) => [...prevTodos, todo]);
+  };
 
-    return (
-        <TodoContext.Provider value={{ todos, addTodo }}>
-            {children}
-        </TodoContext.Provider>
-    );
+  const removeTodo = (index: number) => {
+    setTodos((prevTodos) => prevTodos.filter((_, i) => i !== index));
+  };
+
+  return (
+    <TodoContext.Provider value={{ todos, addTodo, removeTodo }}>
+      {children}
+    </TodoContext.Provider>
+  );
 };
-
-export { TodoContext, TodoProvider };
